@@ -1,0 +1,2 @@
+# MySQLConnectionPool
+MySQLConnectionPool in C#
