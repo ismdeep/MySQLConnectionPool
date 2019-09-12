@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2E8953E-2EA9-47BA-BF18-CBF8467FF3D9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySQLConnectionPool</RootNamespace>
+    <AssemblyName>MySQLConnectionPool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>include\mysql-connector-net-6.9.3-noinstall\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionPool\ConnectionPool.cs" />
+    <Compile Include="ConnectionPool\ConnectionPoolProxy.cs" />
+    <Compile Include="ConnectionPool\ConnectionStatusEnum.cs" />
+    <Compile Include="ConnectionPool\SqlHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="include\mysql-connector-net-6.9.3-noinstall\CHANGES" />
+    <None Include="include\mysql-connector-net-6.9.3-noinstall\COPYING" />
+    <None Include="include\mysql-connector-net-6.9.3-noinstall\Documentation\ConnectorNET.chm" />
+    <None Include="include\mysql-connector-net-6.9.3-noinstall\README" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\Documentation\Licenses for Third-Party Components\license-us-secure-hash.html" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\Documentation\Licenses for Third-Party Components\license-zlib-net.html" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\Documentation\Licenses for Third-Party Components\license-zlib.html" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\Release Notes.txt" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\RT\MySql.Data.RT.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v2.0\MySql.Data.CF.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v2.0\MySql.Data.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v2.0\MySql.Data.Entity.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v2.0\MySql.Web.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.0\MySql.Data.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.0\MySql.Data.Entity.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.0\MySql.Data.Entity.EF6.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.0\MySql.Web.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.5\MySql.Data.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.5\MySql.Data.Entity.EF5.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.5\MySql.Data.Entity.EF6.dll" />
+    <Content Include="include\mysql-connector-net-6.9.3-noinstall\v4.5\MySql.Web.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
